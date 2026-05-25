@@ -252,6 +252,8 @@
   /* ── SKILLS ── */
   #skills { background: white; }
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .skills-grid { grid-template-columns: 1fr; } }
   .skill-card {
     background: var(--gray-50); border-radius: 16px; padding: 1.75rem;
     border: 1px solid var(--gray-200);
