@@ -307,31 +307,51 @@
   }
   .project-card.visible { opacity: 1; transform: none; }
   .project-card:hover { box-shadow: 0 16px 60px rgba(37,99,235,0.14); transform: translateY(-6px); }
-  .project-thumb {
-    width: 100%; height: 180px; object-fit: cover; display: block;
-    background: var(--blue-50);
-    position: relative; overflow: hidden;
-  }
-  .project-thumb-placeholder {
-    width: 100%; height: 180px;
-    background: linear-gradient(135deg, var(--blue-50) 0%, var(--blue-100) 100%);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2rem; color: var(--blue-300);
-    position: relative;
-  }
-  .project-thumb-placeholder::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, transparent 60%, rgba(37,99,235,0.1));
-  }
-  .project-body { padding: 1.25rem 1.5rem 1.5rem; }
-  .project-name { font-weight: 700; font-size: 0.95rem; color: var(--gray-900); margin-bottom: 0.5rem; }
-  .project-url {
-    font-family: var(--font-mono); font-size: 0.72rem; color: var(--blue-500);
-    text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;
-    transition: color 0.2s;
-  }
-  .project-url:hover { color: var(--blue-700); }
-  .project-url::before { content: '↗'; font-size: 0.8rem; }
+  
+/* ── PROJECT THUMBNAILS ── */
+.project-thumb-placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(
+    135deg,
+    var(--blue-50) 0%,
+    var(--blue-100) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Project preview images */
+.project-thumb-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Decorative overlay */
+.project-thumb-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 60%,
+    rgba(37, 99, 235, 0.1)
+  );
+  pointer-events: none;
+}
+
+/* Keep emoji placeholder centered */
+.project-thumb-placeholder:not(:has(img)) {
+  font-size: 2rem;
+  color: var(--blue-300);
+}
  
   /* ── CONTACT ── */
   #contact { background: var(--gray-50); }
