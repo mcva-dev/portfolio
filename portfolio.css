@@ -352,6 +352,16 @@ object-position: top;
   font-size: 2rem;
   color: var(--blue-300);
 }
+
+.project-body { padding: 1.25rem 1.5rem 1.5rem; }
+  .project-name { font-weight: 700; font-size: 0.95rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+  .project-url {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--blue-500);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;
+    transition: color 0.2s;
+  }
+  .project-url:hover { color: var(--blue-700); }
+  .project-url::before { content: '↗'; font-size: 0.8rem; }
  
   /* ── CONTACT ── */
   #contact { background: var(--gray-50); }
